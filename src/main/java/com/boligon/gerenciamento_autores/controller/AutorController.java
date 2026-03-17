@@ -40,7 +40,7 @@ public class AutorController {
     }
 
     @DeleteMapping
-    public ResponseEntity<?> deleteById(Long id) {
+    public ResponseEntity<?> deleteById(@PathVariable Long id) {
         autorService.deleteById(id);
         return ResponseEntity.status(204).build();
     }
