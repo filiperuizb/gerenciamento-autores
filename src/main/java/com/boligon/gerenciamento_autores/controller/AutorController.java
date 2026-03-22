@@ -44,4 +44,11 @@ public class AutorController {
         autorService.deleteById(id);
         return ResponseEntity.status(204).build();
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<AutorEntity> atualizar(@PathVariable Long id, @RequestBody AutorEntity atualizarAutor) {
+        AutorEntity entity = autorService.atualizar(id, atualizarAutor);
+
+        return ResponseEntity.ok(entity);
+    }
 }

@@ -29,4 +29,14 @@ public class AutorService {
     public void deleteById(Long id) {
         autorRepository.deleteById(id);
     }
+
+    public AutorEntity atualizar(Long id, AutorEntity atualizarAutor) {
+        AutorEntity entity = autorRepository.findById(id).get();
+
+        entity.setName(atualizarAutor.getName());
+        entity.setNacionalidade(atualizarAutor.getNacionalidade());
+        entity.setDataNascimento(atualizarAutor.getDataNascimento());
+
+        return autorRepository.save(entity);
+    }
 }
